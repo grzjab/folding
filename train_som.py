@@ -14,7 +14,7 @@ from textProcessing import *
 from utility import *
 
 url = 'http://mattmahoney.net/dc/'
-filename = maybe_download('text8.zip', 31344016)
+filename = maybe_download(url, 'text8.zip', 31344016)
 
 words = read_data(filename)
 print('Data size %d' % len(words))

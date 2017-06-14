@@ -6,7 +6,7 @@ import tensorflow as tf
 import os
 
 
-def maybe_download(filename, expected_bytes):
+def maybe_download(url, filename, expected_bytes):
   """Download a file if not present, and make sure it's the right size."""
   if not os.path.exists(filename):
     filename, _ = urlretrieve(url + filename, filename)
