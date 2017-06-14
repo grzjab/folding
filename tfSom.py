@@ -195,12 +195,12 @@ class SOM(object):
  
         return to_return
 
-    def save(filename) :
+    def save(self, filename) :
         data = [self._locations,  self._weightages, self._m, self._n, self._dim, self._n_iterations, self._batch_size]
         with open(filename, 'wb') as f:
             pickle.dump(data, f)
 
-    def load(filename):
+    def load(self, filename):
         with open(filename, 'rb') as f:
             data = pickle.load(f)
             self._locations = data[0]

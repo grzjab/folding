@@ -35,7 +35,6 @@ def find_contexts( word, window_size, data, dictionary ) :
     idx = dictionary.get(word)
     if idx is None :
         raise BaseException('Word not in a dictionary')
-    print idx
     positions = [i for i,x in enumerate(data) if x == idx]
     ret = []
     for position in positions : 
@@ -45,7 +44,7 @@ def find_contexts( word, window_size, data, dictionary ) :
 def signature( word, window_size, data, dictionary,som ) :
     ctxs = find_contexts(word, window_size, data, dictionary)
     loc = som.map_vects( ctxs )
-    sign = np.zeros((d,d))
+    sign = np.zeros((som._dim,som._dim))
     for x,y in loc :
         sign[x,y] += 1 
     return sign
